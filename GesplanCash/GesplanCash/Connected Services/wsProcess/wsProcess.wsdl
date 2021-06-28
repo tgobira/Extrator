@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.totvs.com/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="wsProcess" targetNamespace="http://www.totvs.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="RM_IRMSServer_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RM_IwsBase_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="RM_IwsProcess_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.totvs.com/Imports">
+      <xsd:import schemaLocation="https://wshmg29.afya.com.br:8063/wsProcess/mex?xsd=xsd0" namespace="http://www.totvs.com/" />
+      <xsd:import schemaLocation="https://wshmg29.afya.com.br:8063/wsProcess/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wshmg29.afya.com.br:8063/wsProcess/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="https://wshmg29.afya.com.br:8063/wsProcess/mex?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Reflection" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRMSServer_Implements_InputMessage">
+    <wsdl:part name="parameters" element="tns:Implements" />
+  </wsdl:message>
+  <wsdl:message name="IRMSServer_Implements_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ImplementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRMSServer_CheckServiceActivity_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServiceActivity" />
+  </wsdl:message>
+  <wsdl:message name="IRMSServer_CheckServiceActivity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServiceActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsBase_AutenticaAcesso_InputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticaAcesso" />
+  </wsdl:message>
+  <wsdl:message name="IwsBase_AutenticaAcesso_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AutenticaAcessoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_GetSchema_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchema" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_GetSchema_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchemaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_GetSchema2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchema2" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_GetSchema2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSchema2Response" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteProcess_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteProcess" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteProcess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithParams" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithParamsAsync_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithParamsAsync" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithParamsAsync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithParamsAsyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithXmlParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithXmlParams" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithXmlParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithXmlParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithXmlParamsAsync_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithXmlParamsAsync" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_ExecuteWithXmlParamsAsync_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWithXmlParamsAsyncResponse" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_GetProcessStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcessStatus" />
+  </wsdl:message>
+  <wsdl:message name="IwsProcess_GetProcessStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProcessStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRMSServer">
+    <wsdl:operation name="Implements">
+      <wsdl:input wsam:Action="http://www.totvs.com/IRMSServer/Implements" message="tns:IRMSServer_Implements_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IRMSServer/ImplementsResponse" message="tns:IRMSServer_Implements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceActivity">
+      <wsdl:input wsam:Action="http://www.totvs.com/IRMSServer/CheckServiceActivity" message="tns:IRMSServer_CheckServiceActivity_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IRMSServer/CheckServiceActivityResponse" message="tns:IRMSServer_CheckServiceActivity_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IwsBase">
+    <wsdl:operation name="Implements">
+      <wsdl:input wsam:Action="http://www.totvs.com/IRMSServer/Implements" message="tns:IRMSServer_Implements_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IRMSServer/ImplementsResponse" message="tns:IRMSServer_Implements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceActivity">
+      <wsdl:input wsam:Action="http://www.totvs.com/IRMSServer/CheckServiceActivity" message="tns:IRMSServer_CheckServiceActivity_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IRMSServer/CheckServiceActivityResponse" message="tns:IRMSServer_CheckServiceActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticaAcesso">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsBase/AutenticaAcesso" message="tns:IwsBase_AutenticaAcesso_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsBase/AutenticaAcessoResponse" message="tns:IwsBase_AutenticaAcesso_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IwsProcess">
+    <wsdl:operation name="Implements">
+      <wsdl:input wsam:Action="http://www.totvs.com/IRMSServer/Implements" message="tns:IRMSServer_Implements_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IRMSServer/ImplementsResponse" message="tns:IRMSServer_Implements_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceActivity">
+      <wsdl:input wsam:Action="http://www.totvs.com/IRMSServer/CheckServiceActivity" message="tns:IRMSServer_CheckServiceActivity_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IRMSServer/CheckServiceActivityResponse" message="tns:IRMSServer_CheckServiceActivity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AutenticaAcesso">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsBase/AutenticaAcesso" message="tns:IwsBase_AutenticaAcesso_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsBase/AutenticaAcessoResponse" message="tns:IwsBase_AutenticaAcesso_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchema">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/GetSchema" message="tns:IwsProcess_GetSchema_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/GetSchemaResponse" message="tns:IwsProcess_GetSchema_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSchema2">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/GetSchema2" message="tns:IwsProcess_GetSchema2_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/GetSchema2Response" message="tns:IwsProcess_GetSchema2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteProcess">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/ExecuteProcess" message="tns:IwsProcess_ExecuteProcess_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/ExecuteProcessResponse" message="tns:IwsProcess_ExecuteProcess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithParams">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithParams" message="tns:IwsProcess_ExecuteWithParams_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsResponse" message="tns:IwsProcess_ExecuteWithParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithParamsAsync">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsync" message="tns:IwsProcess_ExecuteWithParamsAsync_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsyncResponse" message="tns:IwsProcess_ExecuteWithParamsAsync_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithXmlParams">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParams" message="tns:IwsProcess_ExecuteWithXmlParams_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsResponse" message="tns:IwsProcess_ExecuteWithXmlParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithXmlParamsAsync">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsync" message="tns:IwsProcess_ExecuteWithXmlParamsAsync_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsyncResponse" message="tns:IwsProcess_ExecuteWithXmlParamsAsync_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStatus">
+      <wsdl:input wsam:Action="http://www.totvs.com/IwsProcess/GetProcessStatus" message="tns:IwsProcess_GetProcessStatus_InputMessage" />
+      <wsdl:output wsam:Action="http://www.totvs.com/IwsProcess/GetProcessStatusResponse" message="tns:IwsProcess_GetProcessStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RM_IRMSServer" type="tns:IRMSServer">
+    <wsp:PolicyReference URI="#RM_IRMSServer_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Implements">
+      <soap:operation soapAction="http://www.totvs.com/IRMSServer/Implements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceActivity">
+      <soap:operation soapAction="http://www.totvs.com/IRMSServer/CheckServiceActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RM_IwsBase" type="tns:IwsBase">
+    <wsp:PolicyReference URI="#RM_IwsBase_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Implements">
+      <soap:operation soapAction="http://www.totvs.com/IRMSServer/Implements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceActivity">
+      <soap:operation soapAction="http://www.totvs.com/IRMSServer/CheckServiceActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticaAcesso">
+      <soap:operation soapAction="http://www.totvs.com/IwsBase/AutenticaAcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RM_IwsProcess" type="tns:IwsProcess">
+    <wsp:PolicyReference URI="#RM_IwsProcess_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Implements">
+      <soap:operation soapAction="http://www.totvs.com/IRMSServer/Implements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServiceActivity">
+      <soap:operation soapAction="http://www.totvs.com/IRMSServer/CheckServiceActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AutenticaAcesso">
+      <soap:operation soapAction="http://www.totvs.com/IwsBase/AutenticaAcesso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchema">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/GetSchema" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSchema2">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/GetSchema2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteProcess">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/ExecuteProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithParams">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/ExecuteWithParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithParamsAsync">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithXmlParams">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWithXmlParamsAsync">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsync" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessStatus">
+      <soap:operation soapAction="http://www.totvs.com/IwsProcess/GetProcessStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsProcess">
+    <wsdl:port name="RM_IRMSServer" binding="tns:RM_IRMSServer">
+      <soap:address location="https://wshmg29.afya.com.br:8063/wsProcess/IRMSServer" />
+    </wsdl:port>
+    <wsdl:port name="RM_IwsBase" binding="tns:RM_IwsBase">
+      <soap:address location="https://wshmg29.afya.com.br:8063/wsProcess/IwsBase" />
+    </wsdl:port>
+    <wsdl:port name="RM_IwsProcess" binding="tns:RM_IwsProcess">
+      <soap:address location="https://wshmg29.afya.com.br:8063/wsProcess/IwsProcess" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

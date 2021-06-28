@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e72d1457-3835-40df-83f9-5e147e78f591" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://wshmg29.afya.com.br:8063/wsConsultaSQL/MEX?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex.xsd" MetadataType="Schema" ID="8c128838-4ccf-4136-84a1-16160609f39d" SourceId="1" SourceUrl="https://wshmg29.afya.com.br:8063/wsConsultaSQL/mex?xsd=xsd3" />
+    <MetadataFile FileName="mex1.xsd" MetadataType="Schema" ID="8999c6e7-624c-48cb-9625-fb01f6f29aac" SourceId="1" SourceUrl="https://wshmg29.afya.com.br:8063/wsConsultaSQL/mex?xsd=xsd1" />
+    <MetadataFile FileName="mex2.xsd" MetadataType="Schema" ID="23a9dbe5-1ab2-4b4f-9ba2-7ab03369e06d" SourceId="1" SourceUrl="https://wshmg29.afya.com.br:8063/wsConsultaSQL/mex?xsd=xsd2" />
+    <MetadataFile FileName="wsConsultaSQL.wsdl" MetadataType="Wsdl" ID="42adce93-16bd-4ca4-adb5-81952c4c68a3" SourceId="1" SourceUrl="https://wshmg29.afya.com.br:8063/wsConsultaSQL/MEX?wsdl" />
+    <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="f0058b68-fb3f-4ad0-80f1-511ed15602f4" SourceId="1" SourceUrl="https://wshmg29.afya.com.br:8063/wsConsultaSQL/mex?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
