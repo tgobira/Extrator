@@ -75,7 +75,7 @@ namespace GesplanCash.Controllers
 
                     ret = ExtracaoCash.RetornoExtracao(username, password, coligada, codSistema, codSentenca, parametros);
 
-                    return new HttpResponseMessage(HttpStatusCode.Accepted) { Content = new StringContent(ret, Encoding.UTF8, "application/xml") };
+                    return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(ret, Encoding.UTF8, "application/xml") };
                 }
             }
             else
