@@ -37,61 +37,68 @@ namespace ConectorRM.Controllers
         [HttpPost]
         public HttpResponseMessage wsConsultaSQL(ExtracaoRM param)
         {
-            HttpContext httpContext = HttpContext.Current;
-            string authHeader = httpContext.Request.Headers["Authorization"];
-
-            if (authHeader != null && authHeader.StartsWith("Basic"))
+            if(param != null)
             {
-                #region Leitura do Header para identificação da autenticação
-                string encodedUsernamePassword = authHeader.Substring("Basic ".Length).Trim();
-                Encoding encoding = Encoding.GetEncoding("iso-8859-1");
-                string usernamePassword = encoding.GetString(Convert.FromBase64String(encodedUsernamePassword));
-                #endregion
+                HttpContext httpContext = HttpContext.Current;
+                string authHeader = httpContext.Request.Headers["Authorization"];
 
-                int seperatorIndex = usernamePassword.IndexOf(':');
-
-                var username = usernamePassword.Substring(0, seperatorIndex);
-                var password = usernamePassword.Substring(seperatorIndex + 1);
-
-                if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+                if (authHeader != null && authHeader.StartsWith("Basic"))
                 {
-                    throw new Exception("Usuário ou senha não informado para autenticação");
+                    #region Leitura do Header para identificação da autenticação
+                    string encodedUsernamePassword = authHeader.Substring("Basic ".Length).Trim();
+                    Encoding encoding = Encoding.GetEncoding("iso-8859-1");
+                    string usernamePassword = encoding.GetString(Convert.FromBase64String(encodedUsernamePassword));
+                    #endregion
+
+                    int seperatorIndex = usernamePassword.IndexOf(':');
+
+                    var username = usernamePassword.Substring(0, seperatorIndex);
+                    var password = usernamePassword.Substring(seperatorIndex + 1);
+
+                    if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+                    {
+                        return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Usuário ou senha não informados ou inválidos.") };
+                    }
+                    else
+                    {
+                        var ret = string.Empty;
+
+                        #region Propriedades Herdadas do XML de entrada
+                        var coligada = 0;
+                        var codSentenca = string.Empty;
+                        var codSistema = string.Empty;
+                        var parametros = string.Empty;
+
+                        coligada = param.coligada;
+                        codSentenca = param.codSentenca;
+                        codSistema = param.codSistema;
+                        parametros = param.parametros;
+                        #endregion
+                        try
+                        {
+                            ret = ExtracaoRM.RetornoExtracao(username, password, coligada, codSistema, codSentenca, parametros);
+
+                            if (!ret.Contains("<Resultado>"))
+                            {
+                                throw new Exception(ret);
+                            }
+
+                            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(ret, Encoding.UTF8, "application/xml") };
+                        }
+                        catch (Exception ex)
+                        {
+                            return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent(ex.Message) };
+                        }
+                    }
                 }
                 else
                 {
-                    var ret = string.Empty;
-
-                    #region Propriedades Herdadas do XML de entrada
-                    var coligada = 0;
-                    var codSentenca = string.Empty;
-                    var codSistema = string.Empty;
-                    var parametros = string.Empty;
-
-                    coligada = param.coligada;
-                    codSentenca = param.codSentenca;
-                    codSistema = param.codSistema;
-                    parametros = param.parametros;
-                    #endregion
-                    try
-                    {
-                        ret = ExtracaoRM.RetornoExtracao(username, password, coligada, codSistema, codSentenca, parametros);
-
-                        if (!ret.Contains("<Resultado>"))
-                        {
-                            throw new Exception(ret);
-                        }
-
-                        return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(ret, Encoding.UTF8, "application/xml") };
-                    }
-                    catch (Exception ex)
-                    {
-                        return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent(ex.Message) };
-                    }
+                    return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Configuração de autorização não preenchida. Autorização > Basic > Usuário/Senha") };
                 }
             }
             else
             {
-                return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Configuração de autorização não preenchida. Autorização > Basic > Usuário/Senha") };
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("XML não informado ou é inválido.") };
             }
         }
     }
