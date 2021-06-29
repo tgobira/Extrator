@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace GesplanCash.Areas.HelpPage.ModelDescriptions
+namespace ConectorRM.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

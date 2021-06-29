@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GesplanCash.wsDataServer {
+namespace ConectorRM.wsDataServer {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -29,12 +29,12 @@ namespace GesplanCash.wsDataServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRMSServerChannel : GesplanCash.wsDataServer.IRMSServer, System.ServiceModel.IClientChannel {
+    public interface IRMSServerChannel : ConectorRM.wsDataServer.IRMSServer, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RMSServerClient : System.ServiceModel.ClientBase<GesplanCash.wsDataServer.IRMSServer>, GesplanCash.wsDataServer.IRMSServer {
+    public partial class RMSServerClient : System.ServiceModel.ClientBase<ConectorRM.wsDataServer.IRMSServer>, ConectorRM.wsDataServer.IRMSServer {
         
         public RMSServerClient() {
         }
@@ -96,12 +96,12 @@ namespace GesplanCash.wsDataServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IwsBaseChannel : GesplanCash.wsDataServer.IwsBase, System.ServiceModel.IClientChannel {
+    public interface IwsBaseChannel : ConectorRM.wsDataServer.IwsBase, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IwsBaseClient : System.ServiceModel.ClientBase<GesplanCash.wsDataServer.IwsBase>, GesplanCash.wsDataServer.IwsBase {
+    public partial class IwsBaseClient : System.ServiceModel.ClientBase<ConectorRM.wsDataServer.IwsBase>, ConectorRM.wsDataServer.IwsBase {
         
         public IwsBaseClient() {
         }
@@ -251,12 +251,12 @@ namespace GesplanCash.wsDataServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IwsDataServerChannel : GesplanCash.wsDataServer.IwsDataServer, System.ServiceModel.IClientChannel {
+    public interface IwsDataServerChannel : ConectorRM.wsDataServer.IwsDataServer, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IwsDataServerClient : System.ServiceModel.ClientBase<GesplanCash.wsDataServer.IwsDataServer>, GesplanCash.wsDataServer.IwsDataServer {
+    public partial class IwsDataServerClient : System.ServiceModel.ClientBase<ConectorRM.wsDataServer.IwsDataServer>, ConectorRM.wsDataServer.IwsDataServer {
         
         public IwsDataServerClient() {
         }

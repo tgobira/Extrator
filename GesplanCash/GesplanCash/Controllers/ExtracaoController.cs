@@ -1,4 +1,4 @@
-﻿using GesplanCash.Models;
+﻿using ConectorRM.Models;
 using Newtonsoft.Json.Linq;
 using Swashbuckle.Swagger.Annotations;
 using System;
@@ -11,31 +11,31 @@ using System.Web;
 using System.Web.Http;
 using System.Xml;
 
-namespace GesplanCash.Controllers
+namespace ConectorRM.Controllers
 {
     public class ExtracaoController : ApiController
     {
         /// <summary>
-        /// Método responsável pela extração de informações financeiras para alimentação do CASH
+        /// Método responsável pela execução de Consulta SQL no RM via WebService para extração de dados
         /// </summary>
         /// <param name="param">XML de chamada do serviço</param>
         /// <remarks>
         /// Informar usuário e senha de autenticação no Header da Requisição
         /// Exemplo de entrada:
         /// 
-        /// ExtracaoCash
+        /// ExtracaoRM
         /// 
         ///     coligada 0 /coligada
         ///     codSistema F /codSistema
         ///     codSentenca SQL.GESPLAN.001 /codSentenca
         ///		parametros DT_INICIO_D=2021-04-30 15:17:00;DT_FIM_D=2021-04-30 15:20:00 /parametros
         ///		
-        /// /ExtracaoCash
+        /// /ExtracaoRM
         ///     
         /// </remarks>
         /// <returns>Retorna execução da consulta em XML</returns> 
         [HttpPost]
-        public HttpResponseMessage DadosCash(ExtracaoCash param)
+        public HttpResponseMessage wsConsultaSQL(ExtracaoRM param)
         {
             HttpContext httpContext = HttpContext.Current;
             string authHeader = httpContext.Request.Headers["Authorization"];
@@ -72,15 +72,26 @@ namespace GesplanCash.Controllers
                     codSistema = param.codSistema;
                     parametros = param.parametros;
                     #endregion
+                    try
+                    {
+                        ret = ExtracaoRM.RetornoExtracao(username, password, coligada, codSistema, codSentenca, parametros);
 
-                    ret = ExtracaoCash.RetornoExtracao(username, password, coligada, codSistema, codSentenca, parametros);
+                        if (!ret.Contains("<Resultado>"))
+                        {
+                            throw new Exception(ret);
+                        }
 
-                    return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(ret, Encoding.UTF8, "application/xml") };
+                        return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(ret, Encoding.UTF8, "application/xml") };
+                    }
+                    catch (Exception ex)
+                    {
+                        return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent(ex.Message) };
+                    }
                 }
             }
             else
             {
-                throw new Exception("Configuração de autorização não preenchida. Autorização > Basic > Usuário/Senha");
+                return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Configuração de autorização não preenchida. Autorização > Basic > Usuário/Senha") };
             }
         }
     }

@@ -3,10 +3,10 @@ using System.Data;
 using System.Runtime.Serialization;
 using System.Xml;
 
-namespace GesplanCash.Models
+namespace ConectorRM.Models
 {
     [DataContract(Namespace = "")]
-    public class ExtracaoCash
+    public class ExtracaoRM
     {
         [DataMember(Order = 0)]
         public int coligada { get; set; }

@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using GesplanCash.Areas.HelpPage.ModelDescriptions;
-using GesplanCash.Areas.HelpPage.Models;
+using ConectorRM.Areas.HelpPage.ModelDescriptions;
+using ConectorRM.Areas.HelpPage.Models;
 
-namespace GesplanCash.Areas.HelpPage
+namespace ConectorRM.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

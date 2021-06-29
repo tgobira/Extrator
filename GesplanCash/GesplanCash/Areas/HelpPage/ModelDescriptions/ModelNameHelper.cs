@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace GesplanCash.Areas.HelpPage.ModelDescriptions
+namespace ConectorRM.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

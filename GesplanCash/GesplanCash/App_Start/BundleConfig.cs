@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace GesplanCash
+namespace ConectorRM
 {
     public class BundleConfig
     {

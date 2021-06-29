@@ -1,6 +1,6 @@
 using System;
 
-namespace GesplanCash.Areas.HelpPage.ModelDescriptions
+namespace ConectorRM.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Xml;
 
-namespace GesplanCash.Models
+namespace ConectorRM.Models
 {
     public class WebServiceCall
     {
@@ -240,7 +240,6 @@ namespace GesplanCash.Models
                     OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = requestMessage;
                     retorno = servico.RealizarConsultaSQL(codSentenca, coligada, sistema, parametros);
                 }
-
                 XmlTextReader xtr = new XmlTextReader(new System.IO.StringReader(retorno));
 
                 //ret = retorno.Substring(0, retorno.LastIndexOf("</GUSUARIO>"));
@@ -249,7 +248,7 @@ namespace GesplanCash.Models
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                ret = "Usuário não tem permissão para execução da consulta ou dados informados são inválidos." + Environment.NewLine + ex.Message;
             }
 
             return ret;

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GesplanCash.wsProcess {
+namespace ConectorRM.wsProcess {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -29,12 +29,12 @@ namespace GesplanCash.wsProcess {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRMSServerChannel : GesplanCash.wsProcess.IRMSServer, System.ServiceModel.IClientChannel {
+    public interface IRMSServerChannel : ConectorRM.wsProcess.IRMSServer, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RMSServerClient : System.ServiceModel.ClientBase<GesplanCash.wsProcess.IRMSServer>, GesplanCash.wsProcess.IRMSServer {
+    public partial class RMSServerClient : System.ServiceModel.ClientBase<ConectorRM.wsProcess.IRMSServer>, ConectorRM.wsProcess.IRMSServer {
         
         public RMSServerClient() {
         }
@@ -96,12 +96,12 @@ namespace GesplanCash.wsProcess {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IwsBaseChannel : GesplanCash.wsProcess.IwsBase, System.ServiceModel.IClientChannel {
+    public interface IwsBaseChannel : ConectorRM.wsProcess.IwsBase, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IwsBaseClient : System.ServiceModel.ClientBase<GesplanCash.wsProcess.IwsBase>, GesplanCash.wsProcess.IwsBase {
+    public partial class IwsBaseClient : System.ServiceModel.ClientBase<ConectorRM.wsProcess.IwsBase>, ConectorRM.wsProcess.IwsBase {
         
         public IwsBaseClient() {
         }
@@ -190,28 +190,28 @@ namespace GesplanCash.wsProcess {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParams", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsResponse")]
         string ExecuteWithParams(string ProcessServerName, string strXmlParams);
         
-        /*
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParams", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams);
-        */
-
+        
+        /*
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsyncResponse")]
         string ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams);
-        
+        */
+
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsyncResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithParamsAsyncAsync(string ProcessServerName, string strXmlParams);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParams", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsResponse")]
         string ExecuteWithXmlParams(string ProcessServerName, string strXmlParams);
         
-        /*
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParams", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams);
-        */    
-
+        
+        /*
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsyncResponse")]
         string ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams);
-        
+        */
+
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsyncResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsyncAsync(string ProcessServerName, string strXmlParams);
         
@@ -223,12 +223,12 @@ namespace GesplanCash.wsProcess {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IwsProcessChannel : GesplanCash.wsProcess.IwsProcess, System.ServiceModel.IClientChannel {
+    public interface IwsProcessChannel : ConectorRM.wsProcess.IwsProcess, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IwsProcessClient : System.ServiceModel.ClientBase<GesplanCash.wsProcess.IwsProcess>, GesplanCash.wsProcess.IwsProcess {
+    public partial class IwsProcessClient : System.ServiceModel.ClientBase<ConectorRM.wsProcess.IwsProcess>, ConectorRM.wsProcess.IwsProcess {
         
         public IwsProcessClient() {
         }
@@ -301,15 +301,15 @@ namespace GesplanCash.wsProcess {
             return base.Channel.ExecuteWithParams(ProcessServerName, strXmlParams);
         }
         
-        /*
         public System.Threading.Tasks.Task<string> ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithParamsAsync(ProcessServerName, strXmlParams);
         }
-        */
         
+        /*
         public string ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithParamsAsync(ProcessServerName, strXmlParams);
         }
+        */
         
         public System.Threading.Tasks.Task<string> ExecuteWithParamsAsyncAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithParamsAsyncAsync(ProcessServerName, strXmlParams);
@@ -319,15 +319,15 @@ namespace GesplanCash.wsProcess {
             return base.Channel.ExecuteWithXmlParams(ProcessServerName, strXmlParams);
         }
         
-        /*
         public System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithXmlParamsAsync(ProcessServerName, strXmlParams);
         }
-        */
         
+        /*
         public string ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithXmlParamsAsync(ProcessServerName, strXmlParams);
         }
+        */
         
         public System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsyncAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithXmlParamsAsyncAsync(ProcessServerName, strXmlParams);

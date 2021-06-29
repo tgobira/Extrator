@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace GesplanCash
+namespace ConectorRM
 {
     public class FilterConfig
     {

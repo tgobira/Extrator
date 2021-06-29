@@ -1,13 +1,13 @@
 using System.Web.Http;
 using WebActivatorEx;
-using GesplanCash;
+using ConectorRM;
 using Swashbuckle.Application;
 using System;
 using System.Linq;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
-namespace GesplanCash
+namespace ConectorRM
 {
     public class SwaggerConfig
     {
@@ -34,7 +34,7 @@ namespace GesplanCash
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "GesplanCash");
+                        c.SingleApiVersion("v1", "Conector RM");
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
@@ -103,7 +103,7 @@ namespace GesplanCash
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\App_Data\API_Gesplan.xml");
+                        c.IncludeXmlComments($@"{AppDomain.CurrentDomain.BaseDirectory}\App_Data\API_ConectorRM.xml");
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -184,7 +184,7 @@ namespace GesplanCash
                         // Use the "DocumentTitle" option to change the Document title.
                         // Very helpful when you have multiple Swagger pages open, to tell them apart.
                         //
-                        c.DocumentTitle("Documentação das APIs Disponíveis - GESPLAN");
+                        c.DocumentTitle("Documentação das APIs Disponíveis - Conector RM");
 
                         // Use the "InjectStylesheet" option to enrich the UI with one or more additional CSS stylesheets.
                         // The file must be included in your project as an "Embedded Resource", and then the resource's

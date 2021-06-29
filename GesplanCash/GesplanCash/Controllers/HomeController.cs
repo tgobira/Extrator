@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace GesplanCash.Controllers
+namespace ConectorRM.Controllers
 {
     public class HomeController : Controller
     {

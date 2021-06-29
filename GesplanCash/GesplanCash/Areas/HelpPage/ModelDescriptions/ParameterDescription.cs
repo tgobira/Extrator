@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace GesplanCash.Areas.HelpPage.ModelDescriptions
+namespace ConectorRM.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

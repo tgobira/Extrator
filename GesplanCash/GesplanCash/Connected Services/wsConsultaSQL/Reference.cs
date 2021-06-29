@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GesplanCash.wsConsultaSQL {
+namespace ConectorRM.wsConsultaSQL {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -29,12 +29,12 @@ namespace GesplanCash.wsConsultaSQL {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRMSServerChannel : GesplanCash.wsConsultaSQL.IRMSServer, System.ServiceModel.IClientChannel {
+    public interface IRMSServerChannel : ConectorRM.wsConsultaSQL.IRMSServer, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RMSServerClient : System.ServiceModel.ClientBase<GesplanCash.wsConsultaSQL.IRMSServer>, GesplanCash.wsConsultaSQL.IRMSServer {
+    public partial class RMSServerClient : System.ServiceModel.ClientBase<ConectorRM.wsConsultaSQL.IRMSServer>, ConectorRM.wsConsultaSQL.IRMSServer {
         
         public RMSServerClient() {
         }
@@ -96,12 +96,12 @@ namespace GesplanCash.wsConsultaSQL {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IwsBaseChannel : GesplanCash.wsConsultaSQL.IwsBase, System.ServiceModel.IClientChannel {
+    public interface IwsBaseChannel : ConectorRM.wsConsultaSQL.IwsBase, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IwsBaseClient : System.ServiceModel.ClientBase<GesplanCash.wsConsultaSQL.IwsBase>, GesplanCash.wsConsultaSQL.IwsBase {
+    public partial class IwsBaseClient : System.ServiceModel.ClientBase<ConectorRM.wsConsultaSQL.IwsBase>, ConectorRM.wsConsultaSQL.IwsBase {
         
         public IwsBaseClient() {
         }
@@ -171,12 +171,12 @@ namespace GesplanCash.wsConsultaSQL {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IwsConsultaSQLChannel : GesplanCash.wsConsultaSQL.IwsConsultaSQL, System.ServiceModel.IClientChannel {
+    public interface IwsConsultaSQLChannel : ConectorRM.wsConsultaSQL.IwsConsultaSQL, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IwsConsultaSQLClient : System.ServiceModel.ClientBase<GesplanCash.wsConsultaSQL.IwsConsultaSQL>, GesplanCash.wsConsultaSQL.IwsConsultaSQL {
+    public partial class IwsConsultaSQLClient : System.ServiceModel.ClientBase<ConectorRM.wsConsultaSQL.IwsConsultaSQL>, ConectorRM.wsConsultaSQL.IwsConsultaSQL {
         
         public IwsConsultaSQLClient() {
         }

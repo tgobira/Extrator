@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using GesplanCash.Areas.HelpPage.ModelDescriptions;
-using GesplanCash.Areas.HelpPage.Models;
+using ConectorRM.Areas.HelpPage.ModelDescriptions;
+using ConectorRM.Areas.HelpPage.Models;
 
-namespace GesplanCash.Areas.HelpPage.Controllers
+namespace ConectorRM.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.
