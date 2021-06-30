@@ -87,13 +87,13 @@ namespace ConectorRM.Controllers
                         }
                         catch (Exception ex)
                         {
-                            return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent(ex.Message) };
+                            return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Consulta não retornou dados.") };
                         }
                     }
                 }
                 else
                 {
-                    return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Configuração de autorização não preenchida. Autorização > Basic > Usuário/Senha") };
+                    return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Configuração de autorização não preenchida. Autorização > Basic > Usuário/Senha.") };
                 }
             }
             else
