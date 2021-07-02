@@ -78,7 +78,7 @@ namespace ConectorRM.Controllers
                         {
                             ret = ExtracaoRM.RetornoExtracao(username, password, coligada, codSistema, codSentenca, parametros);
 
-                            if (!ret.Contains("<Resultado>"))
+                            if (!ret.Contains("Resultado"))
                             {
                                 throw new Exception(ret);
                             }
@@ -87,7 +87,11 @@ namespace ConectorRM.Controllers
                         }
                         catch (Exception ex)
                         {
-                            return new HttpResponseMessage(HttpStatusCode.InternalServerError) { Content = new StringContent("Consulta não retornou dados.") };
+                            if (!ret.Contains("NewDataSet"))
+                            {
+                                return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(ex.Message, Encoding.UTF8, "application/xml") };
+                            }
+                            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent("<NewDataSet><Resultado></Resultado></NewDataSet>", Encoding.UTF8, "application/xml") };
                         }
                     }
                 }
