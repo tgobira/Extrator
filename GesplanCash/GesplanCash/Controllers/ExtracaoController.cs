@@ -83,7 +83,7 @@ namespace ConectorRM.Controllers
                                 throw new Exception(ret);
                             }
 
-                            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(WebUtility.HtmlDecode(ret), Encoding.UTF8, "application/xml") };
+                            return new HttpResponseMessage(HttpStatusCode.OK) { Content = new StringContent(WebUtility.HtmlDecode(ret.Replace("&#x1F;","")), Encoding.UTF8, "application/xml") };
                         }
                         catch (Exception ex)
                         {
