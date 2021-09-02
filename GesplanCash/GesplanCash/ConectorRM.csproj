@@ -298,6 +298,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\wsProcess\wsProcess.wsdl" />
+    <None Include="Properties\PublishProfiles\ConsultaRM_PRD.pubxml" />
     <None Include="Properties\PublishProfiles\ConsultaRM_TST.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
