@@ -235,6 +235,8 @@ namespace ConectorRM.Models
 
                     ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
+                    ((IContextChannel)servico.InnerChannel).OperationTimeout = new TimeSpan(0, 30, 0);
+
                     HttpRequestMessageProperty requestMessage = new HttpRequestMessageProperty();
                     requestMessage.Headers["Authorization"] = auth;
                     OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = requestMessage;
