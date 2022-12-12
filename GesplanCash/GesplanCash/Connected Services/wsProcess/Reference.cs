@@ -193,11 +193,9 @@ namespace ConectorRM.wsProcess {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParams", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams);
         
-        /*
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsyncResponse")]
         string ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams);
-        */
-
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithParamsAsyncResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithParamsAsyncAsync(string ProcessServerName, string strXmlParams);
         
@@ -207,11 +205,9 @@ namespace ConectorRM.wsProcess {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParams", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams);
         
-        /*
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsyncResponse")]
         string ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams);
-        */
-
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsync", ReplyAction="http://www.totvs.com/IwsProcess/ExecuteWithXmlParamsAsyncResponse")]
         System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsyncAsync(string ProcessServerName, string strXmlParams);
         
@@ -305,11 +301,9 @@ namespace ConectorRM.wsProcess {
             return base.Channel.ExecuteWithParamsAsync(ProcessServerName, strXmlParams);
         }
         
-        /*
         public string ExecuteWithParamsAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithParamsAsync(ProcessServerName, strXmlParams);
         }
-        */
         
         public System.Threading.Tasks.Task<string> ExecuteWithParamsAsyncAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithParamsAsyncAsync(ProcessServerName, strXmlParams);
@@ -323,11 +317,9 @@ namespace ConectorRM.wsProcess {
             return base.Channel.ExecuteWithXmlParamsAsync(ProcessServerName, strXmlParams);
         }
         
-        /*
         public string ExecuteWithXmlParamsAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithXmlParamsAsync(ProcessServerName, strXmlParams);
         }
-        */
         
         public System.Threading.Tasks.Task<string> ExecuteWithXmlParamsAsyncAsync(string ProcessServerName, string strXmlParams) {
             return base.Channel.ExecuteWithXmlParamsAsyncAsync(ProcessServerName, strXmlParams);
